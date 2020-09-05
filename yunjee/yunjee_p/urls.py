@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 import writing.views
 import login.views
+import upload.views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -31,7 +32,11 @@ urlpatterns = [
     path('logout/', login.views.logout, name='logout'),
     path('accounts/', include('allauth.urls')),
     path('like/<int:blog_id>',writing.views.blog_like, name="like"),
-    path('recommended/', writing.views.recommended, name = "recommended"),
+    path('recommended/',writing.views.recommend,name="recommended"),
+    path('search/', include('search.urls')),
+    path('upload/', upload.views.upload, name = 'upload'),
+    path('uploaded/', upload.views.uploaded, name = 'uploaded'),
+
     
     
 

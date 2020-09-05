@@ -5,7 +5,6 @@
 <body>
 <h2>추천합니다</h2>
 
-<form action="{% url 'recommended' %}">
 
     {% for blog in blogs.all %}
     <div style="border-bottom:2px solid #111111;">
@@ -19,7 +18,8 @@
 {% endfor %}
 
 
-</form>
+
+
 <a href="{% url 'home' %}">돌아가기</a>
 
 </body>

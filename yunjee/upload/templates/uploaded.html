@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>업로드</title>
+
+</head>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <form action="{% url 'uploaded' %}">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+
+                <a id="id_uploaded_file" href="{{ uploadFileModel.file.url }}" download>{  }</a>
+                
+               
+
+                
+                <a href="{% url 'home' %}">돌아가기</a>
+                
+            </div>
+        </div>
+
+    </form>
+
+</body>
+
+{% endblock %}
+
+</html>
