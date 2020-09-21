@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 def home(request):
     blogs = Blog.objects
+    print(request.user.is_authenticated)
     if request.user.is_authenticated:
         now_login = Account.objects.get(user=request.user)
         return render(request, 'home.html', {'blogs': blogs,'user': now_login})
@@ -64,9 +65,7 @@ def blog_like(request, blog_id):
 
 def recommend(request):
     blogs = Blog.objects.all().order_by('-like_num', '-pub_date')
-    return render(request, 'recommended.html', {'blogs':blogs})
-
-
+    return render(request, 'recommend.html', {'blogs':blogs})
 
 
 
